@@ -119,6 +119,45 @@ form:
 
           fields:
 
+            discord:
+              type: fieldset
+              title: Discord
+              collapsible: true
+
+              fields:
+
+                providers.discord.enabled:
+                  type: toggle
+                  label: Enabled
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+
+                providers.discord.client_id:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                providers.discord.client_secret:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                providers.discord.options.scope:
+                  type: selectize
+                  size: large
+                  label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                  classes: fancy
+                  validate:
+                    type: commalist
+
+                providers.discord.description:
+                  type: display
+                  content: '[<i class="fa fa-book"></i> Discord OAuth2 from the official documentation](https://discordapp.com/developers/docs/topics/oauth2?target=_blank)'
+                  markdown: true
+
             github:
               type: fieldset
               title: GitHub
