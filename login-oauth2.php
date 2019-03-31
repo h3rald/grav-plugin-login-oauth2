@@ -171,7 +171,7 @@ class LoginOauth2Plugin extends Plugin
         /** @var Message $messages */
         $messages = $this->grav['messages'];
 
-        if ($this->isValidProvider($provider_name)) {
+        if ($this->isValidProvider($provider_name) || $provider_name === 'discord') {
 
             $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
 
@@ -221,9 +221,7 @@ class LoginOauth2Plugin extends Plugin
 
         // We need to redirect as reloading this task will cause error.
         $redirect = (string) $route->withGravParam('task', null);
-        if (isset($event)) {
-            $event->setRedirect($redirect);
-        }
+        $event->setRedirect($redirect);
     }
 
     public function userLoginAuthenticate(UserLoginEvent $event)
