@@ -18,8 +18,6 @@ providers:
     options:
       scope: ['user', 'email', 'guilds']
 
-
-providers:
   github:
     enabled: true
     client_id: ''
