@@ -175,14 +175,11 @@ class LoginOauth2Plugin extends Plugin
 
             $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
 
-            echo $state;
             if (empty($state) || ($state !== $session->oauth2_state)) {
-                echo "1111";
                 unset($session->oauth2_state);
                 // TODO: better error message?
                 $messages->add($t->translate('PLUGIN_LOGIN.LOGIN_FAILED'), 'error');
             } else {
-                echo "2222";
                 // Fire Login process.
                 $event = $login->login([], ['remember_me' => true, 'oauth2' => true, 'provider' => $provider_name], ['return_event' => true]);
                 $user = $event->getUser();
@@ -224,7 +221,9 @@ class LoginOauth2Plugin extends Plugin
 
         // We need to redirect as reloading this task will cause error.
         $redirect = (string) $route->withGravParam('task', null);
-        $event->setRedirect($redirect);
+        if ($event) {
+            $event->setRedirect($redirect);
+        }
     }
 
     public function userLoginAuthenticate(UserLoginEvent $event)
