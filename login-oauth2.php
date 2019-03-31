@@ -221,7 +221,7 @@ class LoginOauth2Plugin extends Plugin
 
         // We need to redirect as reloading this task will cause error.
         $redirect = (string) $route->withGravParam('task', null);
-        if ($event) {
+        if (isset($event)) {
             $event->setRedirect($redirect);
         }
     }
