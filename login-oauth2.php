@@ -170,6 +170,7 @@ class LoginOauth2Plugin extends Plugin
         $t = $this->grav['language'];
         /** @var Message $messages */
         $messages = $this->grav['messages'];
+        $event = $login->login([], ['remember_me' => true, 'oauth2' => true, 'provider' => $provider_name], ['return_event' => true]);
 
         //if ($this->isValidProvider($provider_name)) {
         if (true) {
