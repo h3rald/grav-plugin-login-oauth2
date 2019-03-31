@@ -171,7 +171,9 @@ class LoginOauth2Plugin extends Plugin
         /** @var Message $messages */
         $messages = $this->grav['messages'];
 
-        if ($this->isValidProvider($provider_name) || $provider_name === 'discord') {
+        $event = $login->login([], ['remember_me' => true, 'oauth2' => true, 'provider' => $provider_name], ['return_event' => true]);
+        //if ($this->isValidProvider($provider_name)) {
+        if (true) {
 
             $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
 
