@@ -1,14 +1,14 @@
-name: Login OAuth2
-version: 1.0.1
-description: OAuth2 Client Plugin to integrate with Grav's Login
+name: H3RALD Login OAuth2
+version: 1.0.0
+description: OAuth2 Client Plugin to integrate with Grav's Login (fork of trilbymedia/grav-plugin-login-oauth2)
 icon: plug
 author:
-  name: Trilby Media, LLC
-  email: hello@trilby.media
-homepage: https://trilby.media
+  name: H3RALD
+  email: h3rald@h3rald.com
+homepage: https://github.com/h3rald/grav-plugin-login-oauth2
 keywords: grav, plugin, oauth2, login, social
-bugs: https://github.com/trilbymedia/grav-plugin-login-oauth2/issues
-docs: https://github.com/trilbymedia/grav-plugin-login-oauth2/blob/develop/README.md
+bugs: https://github.com/h3rald/grav-plugin-login-oauth2/issues
+docs: https://github.com/h3rald/grav-plugin-login-oauth2/blob/develop/README.md
 license: MIT
 dependencies:
   - { name: login, version: '~2.6' }
