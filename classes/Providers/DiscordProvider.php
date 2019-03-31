@@ -17,8 +17,8 @@ class DiscordProvider extends BaseProvider
         $this->config = Grav::instance()['config'];
 
         $options += [
-            'clientId'      => $this->config->get('plugins.login-oauth2-discord.client_id'),
-            'clientSecret'  => $this->config->get('plugins.login-oauth2-discord.client_secret'),
+            'clientId'      => $this->config->get('plugins.login-oauth2.providers.discord.client_id'),
+            'clientSecret'  => $this->config->get('plugins.login-oauth2.providers.discord.client_secret'),
             'redirectUri'   => $this->getCallbackUri(),
         ];
 
