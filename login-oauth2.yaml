@@ -11,6 +11,15 @@ default_access_levels:
 callback_uri: '/task:callback.oauth2'
 
 providers:
+  discord:
+    enabled: true
+    client_id: ''
+    client_secret: ''
+    options:
+      scope: ['user', 'email', 'guilds']
+
+
+providers:
   github:
     enabled: true
     client_id: ''
