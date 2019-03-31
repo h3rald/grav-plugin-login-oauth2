@@ -164,7 +164,7 @@ class LoginOauth2Plugin extends Plugin
 
         /** @var Session $session */
         $session = $this->grav['session'];
-        $provider_name = $session->oauth2_provider;
+        $provider_name = $session->oauth2_provider || 'discord';
 
         /** @var Language $t */
         $t = $this->grav['language'];
